@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição no Evento</title>
+    <style>
+        /* Importação de uma fonte moderna do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        /* Reset e Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Principal do Formulário */
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 520px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        /* Estilização dos Grupos de Input */
+        p {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        /* Campos de Texto, Email e Data */
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            color: #1f2937;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus {
+            border-color: #4f46e5;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        /* Estilização do Fieldset (Radio Buttons) */
+        fieldset {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            background-color: #fafafa;
+        }
+
+        legend {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+            padding: 0 8px;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .radio-group label {
+            margin-bottom: 0; /* Alinha perfeitamente com a bolinha */
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-group input {
+            margin-top: 3px;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* Estilização dos Botões */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button[type="submit"] {
+            background-color: #4f46e5;
+            color: #ffffff;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4338ca;
+        }
+
+        button[type="reset"] {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            border: 1px solid #d1d5db;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Inscrição para o Workshop de HTML5</h1>
+
+        <form action="/enviar-inscricao" method="post">
+            <p>
+                <label for="nome-completo">Nome completo:</label>
+                <input type="text" id="nome-completo" name="nome" placeholder="Digite seu nome" required>
+            </p>
+
+            <p>
+                <!-- Corrigido: for="email-contato" para bater com id="email-contato" -->
+                <label for="email-contato">E-mail de contato:</label>
+                <input type="email" id="email-contato" name="email" placeholder="Digite seu e-mail" required>
+            </p>
+
+            <p>
+                <!-- Corrigido: for="data-nascimento" para bater com id="data-nascimento" -->
+                <label for="data-nascimento">Data de nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </p>
+
+            <fieldset>
+                <legend>Nível de conhecimento em programação:</legend>
+                
+                <div class="radio-group">
+                    <input type="radio" name="nivel" id="nivel-iniciante" value="iniciante" checked>
+                    <label for="nivel-iniciante">Iniciante</label>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" name="nivel" id="nivel-intermediario" value="intermediario">
+                    <label for="nivel-intermediario">Intermediário</label>
+                </div>
+                
+                <div class="radio-group">
+                    <input type="radio" name="nivel" id="nivel-avancado" value="avancado">
+                    <label for="nivel-avancado">Avançado</label>
+                </div>
+            </fieldset>
+
+            <p class="checkbox-group">
+                <input type="checkbox" name="newsletter" id="receber-noticias" value="sim">
+                <label for="receber-noticias">Quero receber novidades e novos eventos por e-mail.</label>
+            </p>
+
+            <p class="checkbox-group">
+                <input type="checkbox" name="termos" id="aceitar-termos" required>
+                <label for="aceitar-termos">Declaro que li e aceito os <strong>termos de uso</strong>.</label>
+            </p>
+
+            <div class="button-group">
+                <button type="submit">Confirmar inscrição</button>
+                <button type="reset">Limpar campos</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Input</title>
+    <style>
+        /* Importação da fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container do Formulário */
+        form {
+            background-color: #a6e2fa;
+            width: 100%;
+            max-width: 480px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Estilização dos Rótulos e Títulos Internos */
+        label, p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        p {
+            margin-top: 8px;
+        }
+
+        /* Inputs de Texto, Senha, Email, Número e Data */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            border: 1px solid #287cfa;
+            border-radius: 6px;
+            background-color: #fdfdfd;
+            color: #1f2937;
+            margin-top: 4px;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+        }
+
+        /* Efeito de Foco nos Inputs */
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            border-color: #2563eb;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Estilização dos Grupos de Radio e Checkbox */
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .option-group label {
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        /* Ajustes dos próprios botões Radio e Checkbox */
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2563eb; /* Altera a cor de destaque nativa */
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* Botão Submit */
+        input[type="submit"] {
+            margin-top: 12px;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/processar" method="post">
+
+        <div>
+            <label for="usuario">Nome de usuário:</label>
+            <input type="text" name="usuario" id="usuario" placeholder="Ex: joaosilva">
+        </div>
+
+        <div>
+            <label for="senha">Senha de acesso:</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <div>
+            <label for="email-user">E-mail Principal:</label>
+            <input type="email" name="email" id="email-user" placeholder="nome@dominio.com">
+        </div>
+
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade" min="18" max="100" step="1">
+        </div>
+
+        <div>
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" name="nascimento" id="nascimento">
+        </div>
+
+        <div>
+            <p>Plano desejado:</p>
+            <div class="option-group">
+                <input type="radio" name="plano" id="plano-free" value="gratuito" checked>
+                <label for="plano-free">Gratuito</label>
+            </div>
+            <div class="option-group">
+                <input type="radio" name="plano" id="plano-premium" value="premium">
+                <label for="plano-premium">Premium</label>
+            </div>
+        </div>
+
+        <div>
+            <p>Interesses:</p>
+            <!-- Pequeno detalhe fixado: name="interesses" em minúsculo para padronizar -->
+            <div class="option-group">
+                <input type="checkbox" name="interesses" id="int-html" value="html">
+                <label for="int-html">HTML5</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" name="interesses" id="int-css" value="css">
+                <label for="int-css">CSS3</label>
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar Formulário">
+    </form>
+
+</body>
+</html>

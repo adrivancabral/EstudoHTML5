@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipos de input</title>
+</head>
+<body>
+    <form action="/processar" method="post">
+
+        <label for="usuario">Nome de usuário:</label>
+        <input type="text" name="usuario" id="usuario" placeholder="Ex: joaosilva">
+
+        <label for="senha">Senha de acesso:</label>
+        <input type="password" name="senha" id="senha">
+
+        <label for="email-user">E-mail Principal:</label>
+        <input type="email" name="email" id="email-user" placeholder="nome@dominio.com">
+
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" min="18" max="100" step="1">
+
+        <label for="nascimento">Data de nascimento:</label>
+        <input type="date" name="nascimento" id="nascimento">
+
+        <p>Plano desejado:</p>
+        <input type="radio" name="plano" id="plano-free" value="gratuito" checked>
+        <label for="plano-free">Gratuito</label>
+
+        <input type="radio" name="plano" id="plano-premium" value="premium">
+        <label for="plano-premium">Premium</label>
+
+        <p>Interesses:</p>
+        <input type="checkbox" name="Interesses" id="int-html" value="html">
+        <label for="int-html">HTML5</label>
+
+        <input type="checkbox" name="interesses" id="int-css" value="css">
+        <label for="int-css">CSS3</label>
+
+        <input type="submit" value="Enviar Formulário">
+    </form>
+</body>
+</html>

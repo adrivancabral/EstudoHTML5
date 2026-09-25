@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de cadastro</title>
+</head>
+<body>
+    <form action="/cadastro-veiculos" method="post">
+        <p>
+            <label for="modelo">Modelo do veículo:</label><br>
+            <input type="text" name="modelo" id="modelo" placeholder="Digite o modelo e versão" required>
+        </p>
+        <p>       
+            <label for="placa">Placa do veículo:</label><br>
+            <input type="text" name="placa" id="placa" placeholder="Ex: AAA0A00 ou AAA0000" pattern="[A-Za-z]{3}-[0-9]{4}|[A-Za-z]{3}[0-9][A-Za-z][0-9]{2}" title="Formato AAA0A00 ou AAA-0000" required>
+        </p>
+        <p>
+            <label for="ano">Ano de fabricação:</label><br>
+            <input type="number" name="ano" id="ano" placeholder="Ex: 2020" min="1900" max="2026" required>
+        </p>
+        <p>
+            <label for="valor">Preço de venda (R$):</label><br>
+            <input type="number" name="valor" id="valor" placeholder="Ex: 50000.00" step="0.01" required>
+        </p>
+        <p>
+            <label for="combustivel">Tipo de combustivel:</label><br>
+            <select name="combustivel" id="combustivel" required>
+                <option value="" disabled selected>Selecione o tipo de combustivel...</option>
+                <option value="flex">Flex</option>
+                <option value="gasolina">Gasolina</option>
+                <option value="etanol">Etanol</option>
+                <option value="diesel">Diesel</option>
+                <option value="eletrico">Elétrico</option>
+                <option value="hibrido">Híbrido</option>
+            </select>
+        </p>
+            <fieldset>
+                <legend>Tipo de veículo:</legend>
+                <input type="radio" name="tipo" id="carro" value="carro" checked>
+                <label for="carro">Carro</label>
+
+                <input type="radio" name="tipo" id="moto" value="moto" >
+                <label for="moto">Moto</label>
+            </fieldset>
+            <fieldset>
+                <legend>Opcionais do veículo:</legend>
+                <input type="checkbox" name="opcionais" id="opteto" value="teto">
+                <label for="opteto">Teto Solar</label>
+
+                <input type="checkbox" name="opcionais" id="oparcond" value="arcond">
+                <label for="oparcond">Ar-condicionado</label>
+
+                <input type="checkbox" name="opcionais" id="opabs" value="abs">
+                <label for="opabs">ABS</label>
+            </fieldset>
+        <p>
+            <label for="observacoes">Observações:</label><br>
+            <textarea name="observacoes" id="observacoes" maxlength="300" cols="60" rows="5"placeholder="Descreva detalhes importantes do veículo..." required></textarea>
+        </p>
+        <p>
+            <label for="revisao">Data da úlmtima revisão:</label><br>
+            <input type="date" name="data" id="revisao" required>
+        </p>
+        <p>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar campos</button>
+        </p> 
+    </form>    
+</body>
+</html>

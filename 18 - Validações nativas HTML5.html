@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validações</title>
+</head>
+<body>
+    <form action="/enviar" method="post">
+        <p>
+            <label for="nome">Nome completo (Obrigatório):</label><br>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+        </p>
+        <p>
+            <label for="senha">Senha (8 a 16 caracteres):</label><br>
+            <input type="password" id="senha" name="senha" minlength="8" maxlength="16" placeholder="Mínimo 8 caracteres" required>
+        </p>
+        <p>
+            <label for="idade">Idade (Entre 18 e 99 anos):</label>
+            <input type="number" name="idade" id="idade" min="18" max="99" placeholder="Ex: 25" required>
+        </p>
+        <p>
+            <label for="cep">CEP de entrega:</label><br>
+            <input type="text" name="cep" id="cep" placeholder="12345-678" pattern="[0-9]{5}-[0-9]{3}" title="Digite o CEP no formato: 12345-678" required>
+        </p>
+        <p>
+            <label for="telefone">Ceulular:</label><br>
+            <input type="tel" name="telefone" id="telefone" placeholder="(00)12345-6789" pattern="\([0-9]{2})\ [0-9]{5}-[0-9]{4}" title="Digite o telefone no formato: (00)12345-6789" required>
+        </p>
+        <button type="submit">Finalizar Cadastro</button>
+    </form>
+</body>
+</html>

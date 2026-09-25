@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua internet</title>
+</head>
+<body>
+    <form action="/enviar" method="post">
+        <p>
+            <label for="assunto">Assunto:</label><br>
+            <select name="assunto" id="assunto" required>
+                <option value="" disable selected>Escolha um assunto...</option>
+                <option value="suporte">Suporte técnico</option>
+                <option value="vendas">Comercial / Vendas</option>
+                <option value="outro">Outro assunto</option>
+            </select>
+        </p>
+        <p>
+            <label for="detalhes">Detalhes da solicitação:</label>
+            <textarea name="detalhes" id="detalhes" rows="5" placeholder="Descreva com detalhes..." required></textarea>
+        </p>
+        <button type="submit">Enviar mensagem</button>
+    </form>
+</body>
+</html>

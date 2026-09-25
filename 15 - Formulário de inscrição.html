@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de inscrição no evento</title>
+</head>
+<body>
+    <h1>inscrição para o Workshop de HTML5</h1>
+    <form action="/enviar-inscricao" method="post">
+        <p>
+            <label for="nome-completo">Nome completo:</label><br>
+            <input type="text" id="nome-completo" name="nome" placeholder="Digite seu nome" required>
+        </p>
+        <p>
+            <label for="email-contato">E-mail de contato</label><br>
+            <input type="email" id="email-contato" name="email" placeholder="Digite seu e-mail" required>
+        </p>
+        <p>
+            <label for="data-nascimento">Data de nascimento</label><br>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+        </p>
+        <fieldset>
+            <legend>Nível de conhecimento em programação:</legend>
+            <input type="radio" name="nivel" id="nivel-iniciante" value="iniciante" checked>
+            <label for="nivel-iniciante">Iniciante</label><br>
+
+            <input type="radio" name="nivel" id="nivel-intermediario" value="intermediario">
+            <label for="nivel-intermediario">Intermediário</label><br>
+            
+            <input type="radio" name="nivel" id="nivel-avancado" value="avancado">
+            <label for="nivel-avancado">Avançado</label>
+        </fieldset>
+        <br>
+        <p>
+            <input type="checkbox" name="newsletter" id="receber-noticias" value="sim">
+            <label for="receber-noticias">Quero receber novidades e novos eventos por e-mail.</label>
+        </p>
+        <p>
+            <input type="checkbox" name="termos" id="aceitar-termos" required>
+            <label for="aceitar-termos">Declaro que li e aceito os <strong>termos de uso</strong></label>
+        </p>
+        <p>
+            <button type="submit">Comfirmar inscrição</button>
+            <button type="reset">Limpar campos</button>
+        </p>
+    </form>
+</body>
+</html>
